@@ -2,7 +2,7 @@
 require_once "Model/ProductModel.php";
 require_once "View/ApiView.php";
 
-class ApiProductController{
+class ApiProductsController{
 
     private $model;
     private $view;
@@ -12,12 +12,12 @@ class ApiProductController{
         $this->view = new ApiView();
     }
 
-    function getProducts(){
+    public function getProducts(){
         $productos = $this->model->getProducts();
         return $this->view->response($productos, 200);
     }
 
-    function getProduct($params = null){
+    public function getProduct($params = null){
         $id = $params[":ID"];
         $producto = $this->model->getProductById($id);
         if (!empty($producto)){

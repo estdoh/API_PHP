@@ -1,10 +1,13 @@
 <?php
+    
 
 class ProductsModel {
     
     private $db;
-    public function __construct() {
+    public function __construct() {        
         $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
+        // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_mydate', '');        
+        // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_usr1', 'Qe8raDs78g');
     }
     
     function getProducts() {

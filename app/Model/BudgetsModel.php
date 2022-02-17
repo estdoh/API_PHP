@@ -7,22 +7,26 @@ class BudgetsModel {
         $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
     }
     
-    function getBudgets() {        
+    function getBudgets() {      
         // $query = $this->db->prepare('SELECT * FROM budgets 
         //                             INNER JOIN clients ON budgets.cliente_name = clients.id_client
         //                             ');
-        $query = $this->db->prepare('SELECT budget_description,budget_total, budget_detail,name_product,price_product
+        $query = $this->db->prepare('SELECT client_name,budget_description,budget_total,budget_detail, name_product,price_product,quantity_product, client_name
                                     FROM budgets 
                                     INNER JOIN clients ON budgets.cliente_name = clients.id_client
                                     INNER JOIN budgets_detail ON budgets.budget_detail = budgets_detail.id_budget_detail
         ');
-        $query->execute();
-        $budgets = $query->fetchAll(PDO::FETCH_OBJ);        
+        $query->execute(); 
+        $budgets = $query->fetchAll(PDO::FETCH_OBJ);    
+        
         return $budgets;
     }
 
     function getBudgetById($id) {
-        $query = $this->db->prepare('SELECT * FROM budgets WHERE id_budget=?');
+        $query = $this->db->prepare('SELECT * FROM budgets 
+                                    INNER JOIN clients ON budgets.cliente_name = clients.id_client 
+                                    INNER JOIN budgets_detail ON budgets.budget_detail = budgets_detail.id_budget_detail
+                                    WHERE id_budget=?');
         $query->execute(array($id));
         $budget = $query->fetch(PDO::FETCH_OBJ);         
         return $budget;
@@ -32,7 +36,7 @@ class BudgetsModel {
         $query = $this->db->prepare('DELETE FROM budgets WHERE id_budget=?');
         $query->execute(array($id));
         return $query->rowCount();
-        $query = $this->db->prepare('SELECT *  FROM budget_json ');
+        // $query = $this->db->prepare('SELECT *  FROM budget_json ');
     }
 
     function orderBudgetBy($orderby){

@@ -14,42 +14,62 @@ class ApiBudgetsController{
 
     function getBudgets(){
         $budgets = $this->model->getBudgets();
-        var_dump($budgets);
-        return $this->view->response($budgets, 200);
+        // print_r($budgets);
+        $total_budgets = [];
+        foreach($budgets as $budget) {            
+            $budget = [
+                "cliente_name" => $budget->client_name,
+                "budget_description" => $budget->budget_description,
+                "budget_detail" => [
+                    "quantity_product" => $budget->quantity_product,
+                    "name_product" => $budget->name_product,
+                    "price_product" => $budget->price_product
+                ],
+                "budget_total" => $budget->budget_total,
+            ];
+            array_push($total_budgets, $budget);
+
+        }
+        return $this->view->response($total_budgets, 200);
     }
 
     function getBudget($params = null){
         $id = $params[":ID"];
         $budget = $this->model->getBudgetById($id);
+        
         if (!empty($budget)){
+            $budget = [
+                "cliente_name" => $budget->client_name,
+                "budget_description" => $budget->budget_description,
+                "budget_detail" => [
+                    "quantity_product" => $budget->quantity_product,
+                    "name_product" => $budget->name_product,
+                    "price_product" => $budget->price_product
+                ],
+                "budget_total" => $budget->budget_total,
+            ];
             return $this->view->response($budget, 200);
         } else {
-            $this->view->response("La Presupuesto con el id=$id no existe", 404);
+            $this->view->response("El Presupuesto con el id: $id no existe", 404);
         };
     }
 
     public function deleteBudget($params = null) {
         $id = $params[':ID'];
-        $budget = $this->model->getBudgets($id);
+        $budget = $this->model->getBudgetById($id);
         if($budget){
             $this->model->deleteBudget($id);
-            $this->view->response("El presupuesto con el id=$id fue eliminada", 200);
+            $this->view->response("El presupuesto con el id: $id fue eliminada", 200);
         } else {
-            $this->view->response("El presupuesto con el id=$id no existe", 404);
+            $this->view->response("El presupuesto con el id: $id no existe", 404);
         };
     }
 
     public function insertBudget(){
-        //agarro los datos de request (json)
-        $body = $this->getBody();
-        // verifica si la tarea existe
-        //  convert to string
-        
-        
-       
+        $body = $this->getBody();    
         if (!empty($body)) {
             $id = $this->model->addBudget($body->cliente_name,$body->budget_description,$body->budget_detail,$body->budget_total);
-            $this->view->response( $this->model->getBudgetById($id), 201);
+            $this->view->response( $this->model->getBudgetById($id), 200);
         } else {
             $this->view->response("El presupuesto no se pudo insertar", 404);
         };
