@@ -5,13 +5,20 @@ class ProductsModel {
     
     private $db;
     public function __construct() {        
+
+        // $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+
+        // $server = $url["host"];
+        // $username = $url["user"];
+        // $password = $url["pass"];
+        // $db = substr($url["path"], 1);
+
+        // $conn = new mysqli($server, $username, $password, $db);
+        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
-        $this->db = new PDO('
-        mysql:host=us-cdbr-east-05.cleardb.net;',
-        'dbname=heroku_3768f01bf6856fc;charset=utf8', 
-        'Username=be3093d987bbca',
-        'Password=14377f76');
-        // mysql://:14377f76@us-cdbr-east-05.cleardb.net/heroku_3768f01bf6856fc?reconnect=true
+        $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;','Username=be3093d987bbca','Password=14377f76','dbname=heroku_3768f01bf6856fc;charset=utf8',);
+        // mysql://us-cdbr-east-05.cleardb.net:14377f76@us-cdbr-east-05.cleardb.net/heroku_3768f01bf6856fc?reconnect=true
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_mydate', '');        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_usr1', 'Qe8raDs78g');
     }
