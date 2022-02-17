@@ -11,7 +11,7 @@ require_once 'app/Controller/ApiProductsController.php';
 $router = new Router();
 
 // define la tabla de ruteo
-$router->addRoute('products', 'GET', 'ApiProductsController', 'getProducts');
+$router->addRoute('', 'GET', 'ApiProductsController', 'getProducts');
 $router->addRoute('products/:ID', 'GET', 'ApiProductsController', 'getProduct');
 $router->addRoute('products', 'POST', 'ApiProductsController', 'insertProduct');
 $router->addRoute('products/:ID', 'PUT', 'ApiProductsController', 'editProduct');
