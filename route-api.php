@@ -1,11 +1,11 @@
 <?php
 require_once 'libs/Router.php';
-require_once 'app/ApiProductsController.php';
-// require_once 'app/ApiCategoryController.php';
-// require_once 'app/ApiBudgetsController.php';
-// require_once 'app/ApiClientsController.php';
-// require_once 'app/ApiUserController.php';
-// require_once 'app/ApiCommentsController.php';
+require_once 'app/Controller/ApiProductsController.php';
+// require_once 'app/Controller/ApiCategoryController.php';
+// require_once 'app/Controller/ApiBudgetsController.php';
+// require_once 'app/Controller/ApiClientsController.php';
+// require_once 'app/Controller/ApiUserController.php';
+// require_once 'app/Controller/ApiCommentsController.php';
 
 // crea el router
 $router = new Router();
