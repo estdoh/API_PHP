@@ -1,7 +1,9 @@
 <?php
 // print_r("hello world 1");
-require_once '../Model/ProductModel.php';
-require_once '../View/ApiView.php';
+// include product model
+// include_once 'app/Model/ProductModel.php';
+require_once 'app/Model/ProductModel.php';
+require_once 'app/View/ApiView.php';
 
 class ApiProductsController{
 
