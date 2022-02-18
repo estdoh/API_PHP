@@ -13,8 +13,10 @@ class ProductsModel {
         $username = 'be3093d987bbca';
         $password = '14377f76';
         $db = 'heroku_3768f01bf6856fc';
-        $this->db = new mysqli($host,$username,$password,$db);
+        // $this->db = new mysqli($host,$username,$password,$db);
         // $conn = new mysqli($server, $username, $password, $db);
+
+        $this->db = new PDO("'mysql:host=$host;db=$db', 'username=$username', 'password=$password'");
 
         // $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;db=heroku_3768f01bf6856fc','username=be3093d987bbca','password=14377f76', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
         // $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net','username=be3093d987bbca','password=14377f76', array('db=heroku_3768f01bf6856fc;charset=utf8'));
