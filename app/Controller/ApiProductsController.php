@@ -12,6 +12,10 @@ class ApiProductsController{
         $this->view = new ApiView();
     }
 
+    public function helloWorld(){
+        $this->view->response("Hello World");
+    }
+
     public function getProducts(){
         $productos = $this->model->getProducts();
         return $this->view->response($productos, 200);
