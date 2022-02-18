@@ -1,6 +1,7 @@
 <?php
-require_once './Model/ProductModel.php';
-require_once './View/ApiView.php';
+print_r("hello world 1");
+require_once '../Model/ProductModel.php';
+require_once '../View/ApiView.php';
 
 class ApiProductsController{
 
