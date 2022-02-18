@@ -5,31 +5,16 @@ class ProductsModel {
     
     private $db;
     public function __construct() {        
-
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
-
-        // $url = parse_url(getenv("mysql://be3093d987bbca:14377f76@us-cdbr-east-05.cleardb.net/heroku_3768f01bf6856fc?reconnect=true"));
-        // $host = 'us-cdbr-east-05.cleardb.net';
-        // $username = 'be3093d987bbca';
-        // $password = '14377f76';
-        // $db = 'heroku_3768f01bf6856fc';
-        // $this->db = new mysqli($host,$username,$password,$db);
-        // $conn = new mysqli($server, $username, $password, $db);
-
-        // $this->db = new PDO("'mysql:host=$host;db=$db', 'username=$username', 'password=$password'");
-
         $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;db=heroku_3768f01bf6856fc','be3093d987bbca','14377f76');
-        // $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;db=heroku_3768f01bf6856fc','username=be3093d987bbca','password=14377f76', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-        // $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net','username=be3093d987bbca','password=14377f76', array('db=heroku_3768f01bf6856fc;charset=utf8'));
-
-
 
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_mydate', '');        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_usr1', 'Qe8raDs78g');
     }
     
     function getProducts() {
-        $query = $this->db->prepare('SELECT products.*,category.name as name_category FROM products JOIN category ON products.category = category.id_category');
+        // $query = $this->db->prepare('SELECT products.*,category.name as name_category FROM products JOIN category ON products.category = category.id_category');
+         $query = $this->db->prepare('SELECT * FROM products');
         $query->execute();
         $products = $query->fetchAll(PDO::FETCH_OBJ);
         return $products;
