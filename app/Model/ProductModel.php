@@ -16,7 +16,7 @@ class ProductsModel {
         // $this->db = new mysqli($server,$username,$password,$db);
         // $conn = new mysqli($server, $username, $password, $db);
 
-        $this->db = new mysqli_connect('mysql:server=us-cdbr-east-05.cleardb.net;','username=be3093d987bbca','password=14377f76','db=heroku_3768f01bf6856fc');
+        $this->db = new PDO('mysql:server=us-cdbr-east-05.cleardb.net;','username=be3093d987bbca','password=14377f76','db=heroku_3768f01bf6856fc');
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_mydate', '');        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_usr1', 'Qe8raDs78g');
     }
