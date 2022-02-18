@@ -6,7 +6,6 @@ class ProductsModel {
     public function __construct() {        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
         $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;db=heroku_3768f01bf6856fc','be3093d987bbca','14377f76');
-
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_mydate', '');        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_usr1', 'Qe8raDs78g');
     }
@@ -14,7 +13,7 @@ class ProductsModel {
     function getProducts() {
         // $query = $this->db->prepare('SELECT products.*,category.name as name_category FROM products JOIN category ON products.category = category.id_category');
         // select db heroku_3768f01bf6856fc
-        $query = select_db('heroku_3768f01bf6856fc');
+        
         // $query = select_db(heroku_3768f01bf6856fc);
          $query = $this->db->prepare("SELECT * FROM products");
         $query->execute();

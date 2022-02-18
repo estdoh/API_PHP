@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tpe_especial`
+-- Base de datos: `heroku_3768f01bf6856fc`
 --
 
 -- --------------------------------------------------------
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `category`
 --
-use heroku_3768f01bf6856fc;
+USE heroku_3768f01bf6856fc;
 
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
