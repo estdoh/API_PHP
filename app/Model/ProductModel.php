@@ -17,6 +17,7 @@ class ProductsModel {
         $query->execute();
         $products = $query->fetchAll(PDO::FETCH_OBJ);
         return $products;
+        echo $products;
     }
 
     function getProductById($id) {
