@@ -10,7 +10,7 @@ require_once 'app/Controller/ApiProductsController.php';
 // crea el router
 $router = new Router();
 
-$router->addRoute('', 'GET', 'ApiProductsController', 'helloWorld');
+$router->addRoute('/', 'GET', 'ApiProductsController', 'helloWorld');
 
 // define la tabla de ruteo
 $router->addRoute('products', 'GET', 'ApiProductsController', 'getProducts');

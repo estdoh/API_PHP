@@ -1,6 +1,6 @@
 <?php
-require_once '../Model/ProductModel.php';
-require_once '../View/ApiView.php';
+require_once './Model/ProductModel.php';
+require_once './View/ApiView.php';
 
 class ApiProductsController{
 
