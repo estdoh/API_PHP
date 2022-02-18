@@ -16,7 +16,7 @@ class ApiProductsController{
     }
 
     public function helloWorld(){
-        return $this->view->response("Hello World", 200);
+        return $this->view->response(message: "hello world");
     }
 
     public function getProducts(){
