@@ -13,7 +13,7 @@ class ApiProductsController{
     }
 
     public function helloWorld(){
-        $this->view->response("Hello World");
+        return $this->view->response("Hello World", 200);
     }
 
     public function getProducts(){
