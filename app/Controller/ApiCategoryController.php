@@ -1,6 +1,6 @@
 <?php
-require_once "Model/CategoryModel.php";
-require_once "View/ApiView.php";
+require_once "app/Model/CategoryModel.php";
+require_once "app/View/ApiView.php";
 
 class ApiCategoryController{
 

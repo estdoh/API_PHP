@@ -1,7 +1,7 @@
 <?php
-require_once "Model/CommentsModel.php";
-require_once "View/ApiView.php";
-require_once "Helpers/AuthHelper.php";
+require_once "app/Model/CommentsModel.php";
+require_once "app/View/ApiView.php";
+require_once "app/Helpers/AuthHelper.php";
 
 class ApiCommentsController{
     private $model;

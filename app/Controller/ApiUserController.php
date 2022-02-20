@@ -1,8 +1,8 @@
 <?php
 // require_once "Model/CategoryModel.php";
-require_once "Model/UserModel.php";
-require_once "View/ApiView.php";
-require_once "Helpers/AuthApiHelper.php";
+require_once "app/Model/UserModel.php";
+require_once "app/View/ApiView.php";
+require_once "app/Helpers/AuthApiHelper.php";
 
 class ApiUserController{
     private $model;

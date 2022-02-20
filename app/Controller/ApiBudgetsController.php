@@ -1,6 +1,6 @@
 <?php
-require_once "Model/BudgetsModel.php";
-require_once "View/ApiView.php";
+require_once "app/Model/BudgetsModel.php";
+require_once "app/View/ApiView.php";
 
 class ApiBudgetsController{
 

@@ -1,6 +1,6 @@
 <?php
-require_once "Model/ClientsModel.php";
-require_once "View/ApiView.php";
+require_once "app/Model/ClientsModel.php";
+require_once "app/View/ApiView.php";
 
 class ApiClientsController{
 
