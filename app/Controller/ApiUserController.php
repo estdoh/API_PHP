@@ -37,12 +37,12 @@ class ApiUserController{
         $getUser = $this->model->getUser($id);
         if($getUser){
             if($getUser->id == $id){
-                $this->view->response($getUser, 200);                
+                return $this->view->response($getUser, 200);                
             } else {
                 $this->view->response("Forbidden", 403);
             }
         } else {
             $this->view->response("Unauthorized", 401);
-        }
+        };
     }
 }
