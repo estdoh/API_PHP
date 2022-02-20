@@ -42,8 +42,8 @@ $router->addRoute('clients/:ID', 'DELETE', 'ApiClientsController', 'deleteClient
 // $router->addRoute('comments', 'POST', 'ApiCommentsController', 'insertComments');
 // $router->addRoute('comments/:ID', 'DELETE', 'ApiCommentsController', 'deleteComment');
 
-// $router->addRoute('user/token', 'GET', 'ApiUserController', 'getToken');
-// $router->addRoute('user/:ID', 'GET', 'ApiUserController', 'getUser');
+$router->addRoute('user/token', 'GET', 'ApiUserController', 'getToken');
+$router->addRoute('user/:ID', 'GET', 'ApiUserController', 'getUser');
 
 // rutea
 $router->route($_GET["resource"], $_SERVER['REQUEST_METHOD']);
