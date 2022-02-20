@@ -7,10 +7,16 @@ class CategoryModel {
     }  
    
     function getCategories() { 
-        $query = $this->db->prepare('SELECT * FROM `category`');
+        $query = $this->db->prepare('SELECT * FROM category');
         $query->execute();
-        $categoryproducts = $query->fetchAll(PDO::FETCH_OBJ);        
-        return $categoryproducts;
+        if ($query->rowCount() > 0) {
+            $categories = $query->fetchAll(PDO::FETCH_OBJ);
+            return $categories;
+        } else {
+            return false;
+        }
+        // $categoryproducts = $query->fetchAll(PDO::FETCH_OBJ);        
+        // return $categoryproducts;
     }
 
     function addCategory($name, $description) {  
