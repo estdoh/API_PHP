@@ -34,7 +34,7 @@ class ApiUserController{
         // users/:ID
         $id = $params[':ID'];
         // $user = $this->authHelper->getBasic();
-        $getUser = $this->model->getUser($id);
+        $getUser = $this->model->getUserById($id);
         if($getUser){
             if($getUser->id == $id){
                 return $this->view->response($getUser, 200);                
