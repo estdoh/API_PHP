@@ -34,16 +34,31 @@ class ApiUserController{
         // users/:ID
         $id = $params[':ID'];
         $user = $this->authHelper->getBasic();
-        $getUser = $this->model->getUserById($id);
-        if(!empty($getUser)){
-            // return $this->view->response($getUser, 200);
-            if($user["user"] == $getUser["user"]){
-                return $this->view->response($getUser, 200);                
-            } else {
-                $this->view->response("Forbidden", 403);
-            }
+        $userdb = $this->model->getUserById($id);
+      
+        if ($userdb->email == $user["user"]){
+            $token = $this->authHelper->createToken($user);
+            // $validate = $this->authHelper->getuser($token);
+            $this->view->response($userdb, 200);
         } else {
-            $this->view->response("Unauthorized", 401);
-        };
+            $this->view->response("El usuario no existe", 404);
+        }
+
+
+
+
+        
+        
+        // $getUser = $this->model->getUserById($id);
+        // if(!empty($getUser)){
+        //     // return $this->view->response($getUser, 200);
+        //     if($token ){
+        //         return $this->view->response($user, 200);                
+        //     } else {
+        //         $this->view->response("Forbidden", 403);
+        //     }
+        // } else {
+        //     $this->view->response("Unauthorized", 401);
+        // };
     }
 }

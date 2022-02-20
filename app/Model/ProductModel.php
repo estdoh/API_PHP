@@ -70,7 +70,9 @@ class ProductsModel {
         $query = $this->db->prepare('INSERT INTO products (category,name,description,img,price_a,price_b) VALUES (?,?,?,?,?,?)');
         $query->execute([$category,$name,$description,$img,$price_a,$price_b]);
         $product = $query->fetchAll(PDO::FETCH_OBJ);
-        return $product;    
+        // return lastInsertId($query);
+        return $this->db->lastInsertId();
+        // return $product;    
     }
 
     function updateProductById($category, $name, $description,$price_a, $price_b, $id,  $pathImg = null){

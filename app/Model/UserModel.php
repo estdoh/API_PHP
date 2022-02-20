@@ -3,7 +3,9 @@
 class UserModel {    
     private $db;
     public function __construct() {
-        $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;'.'dbname=heroku_3768f01bf6856fc;charset=UTF8','be3093d987bbca','14377f76');
+        // $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;'.'dbname=heroku_3768f01bf6856fc;charset=UTF8','be3093d987bbca','14377f76');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
+
     }
 
     function getUser($email){

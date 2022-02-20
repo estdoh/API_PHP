@@ -69,7 +69,8 @@ class ApiBudgetsController{
         $body = $this->getBody();    
         if (!empty($body)) {
             $id = $this->model->addBudget($body->cliente_name,$body->budget_description,$body->budget_detail,$body->budget_total);
-            $this->view->response( $this->model->getBudgetById($id), 200);
+            $budgetAdd = $this->model->getBudgetById($id);
+            $this->view->response( $budgetAdd, 200);
         } else {
             $this->view->response("El presupuesto no se pudo insertar", 404);
         };

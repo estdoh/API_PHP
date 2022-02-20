@@ -47,7 +47,8 @@ class ApiCategoryController{
         // verifica si la tarea existe
         if (!empty($body)) {
             $id = $this->model->addCategory($body->name,$body->description);
-            $this->view->response( $this->model->getCategoryById($id), 201);
+            $categoryAdd = $this->model->getCategoryById($id);            
+            $this->view->response( $categeroyAdd, 200);
         } else {
             $this->view->response("La categoria no se pudo insertar", 404);
         };
