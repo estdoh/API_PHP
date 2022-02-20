@@ -4,7 +4,7 @@ class BudgetsModel {
     
     private $db;
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
+        // $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
     }
     
     function getBudgets() {      
