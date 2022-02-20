@@ -26,8 +26,8 @@ class ProductsModel {
         // $products = $query->fetchAll(PDO::FETCH_OBJ);
         // return $query;
         
-        $query = $this->db->prepare('SELECT * FROM products');
-        $query->execute();
+        $query = $this->db('SELECT * FROM products');
+        // $query->execute();
         if ($query->rowCount() > 0) {
             $products = $query->fetchAll(PDO::FETCH_OBJ);
             return $products;
