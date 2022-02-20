@@ -5,16 +5,16 @@ class ProductsModel {
     private $db;
     public function __construct() {        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
-        // $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;'.'dbname=heroku_3768f01bf6856fc;charset=UTF8','be3093d987bbca','14377f76');
+        $this->db = new PDO('mysql:host=us-cdbr-east-05.cleardb.net;'.'dbname=heroku_3768f01bf6856fc;charset=UTF8','be3093d987bbca','14377f76');
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_mydate', '');        
         // $this->db = new PDO('mysql:host=localhost;'.'dbname=apirest_mydate;charset=utf8', 'apirest_usr1', 'Qe8raDs78g');
 
-        $server = 'host=us-cdbr-east-05.cleardb.net';
-        $username = 'be3093d987bbca';
-        $password = '14377f76';
-        $db = 'heroku_3768f01bf6856fc';
+        // $server = 'host=us-cdbr-east-05.cleardb.net';
+        // $username = 'be3093d987bbca';
+        // $password = '14377f76';
+        // $db = 'heroku_3768f01bf6856fc';
 
-        $db = new mysqli($server, $username, $password, $db);
+        // $db = new mysqli($server, $username, $password, $db);
 
 
     }
@@ -26,7 +26,7 @@ class ProductsModel {
         // $products = $query->fetchAll(PDO::FETCH_OBJ);
         // return $query;
         
-        $query = $db('SELECT * FROM products');
+        $query = $this->db('SELECT * FROM products');
         // $query->execute();
         if ($query->rowCount() > 0) {
             $products = $query->fetchAll(PDO::FETCH_OBJ);
