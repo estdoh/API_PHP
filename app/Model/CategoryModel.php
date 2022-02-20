@@ -1,10 +1,11 @@
 <?php
+require_once ("config.php");
 
 class CategoryModel {
-    private $db;
-    public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
-    }  
+    // private $db;
+    // public function __construct() {
+    //     $this->db = new PDO('mysql:host=localhost;'.'dbname=tpe_especial;charset=utf8', 'root', '');
+    // }  
    
     function getCategories() { 
         $query = $this->db->prepare('SELECT * FROM `category`');
