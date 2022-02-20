@@ -17,11 +17,18 @@ class ProductsModel {
         // $products = $query->fetchAll(PDO::FETCH_OBJ);
         // return $query;
         
-        $query = $this->db->prepare('SELECT * FROM `products`');
+        $query = $this->db->prepare('SELECT * FROM products');
         $query->execute();
-        $products = $query->fetchAll(PDO::FETCH_OBJ);
-        return $products;
-        echo $products;
+        if ($query->rowCount() > 0) {
+            $products = $query->fetchAll(PDO::FETCH_OBJ);
+            return $products;
+        } else {
+            return false;
+        }
+        
+        // $products = $query->fetchAll(PDO::FETCH_OBJ);
+        // return $products;
+        // echo $products;
 
        
     }
