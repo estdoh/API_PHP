@@ -14,6 +14,7 @@ class ProductsModel {
         // $query = $this->db->prepare('SELECT products.*,category.name as name_category FROM products JOIN category ON products.category = category.id_category');
         // $query = $this->db ('USE heroku_3768f01bf6856fc');
         $query = $this->db->prepare('SELECT * FROM `products`');
+        $query->execute();
         if ($query->execute()) {
             return $query->fetchAll(PDO::FETCH_OBJ);
         } else {
