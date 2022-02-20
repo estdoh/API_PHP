@@ -33,7 +33,7 @@ class ApiUserController{
     function getUser($params = null){
         // users/:ID
         $id = $params[':ID'];
-        $user = $this->authHelper->getBasic();
+        // $user = $this->authHelper->getBasic();
         $getUser = $this->model->getUser($id);
         if($user){
             if($id == $user->sub){
