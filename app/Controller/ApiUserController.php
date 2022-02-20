@@ -35,8 +35,8 @@ class ApiUserController{
         $id = $params[':ID'];
         // $user = $this->authHelper->getBasic();
         $getUser = $this->model->getUser($id);
-        if($user){
-            if($id == $user->sub){
+        if($getUser){
+            if($getUser->id == $id){
                 $this->view->response($getUser, 200);                
             } else {
                 $this->view->response("Forbidden", 403);
